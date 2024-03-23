@@ -8,10 +8,12 @@ const Users = ({uid}) => {
   const [users,setUsers]= useState();
 
   useEffect(() => {
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app';
     if (uid) {
       const fetchData = async () => {
         try {
-          const response = await axios.post('http://127.0.0.1:8000/user', { uid });
+          const response = await axios.post(`${urlDeploy}/user`, { uid });
           setUsers(response.data);
         } catch (error) {
           console.error('Error fetching user data:', error);

@@ -7,10 +7,12 @@ const Service= ({uid})=>{
   const[services, setServices]=useState();
 
   useEffect(()=>{
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app';
     if(uid){
       const serviceAxios = async()=>{
         try{
-          const response = await axios.post('http://127.0.0.1:8000/Getservice', { uid });
+          const response = await axios.post(`${urlDeploy}/Getservice`, { uid });
           setServices(response.data)
         }catch{
           console.error("Error")
@@ -23,7 +25,7 @@ const Service= ({uid})=>{
   return(
     <Box width='100%' height='100vh'>
       <Text color='white' fontSize='36px' fontWeight='bold' textAlign='center'>Servicos</Text>
-      <Box width='100%' height='80%' backgroundColor='#0d933c'>
+      <Box width='100%' height='80%' backgroundColor='#0d933c' overflowY='scroll'>
         {
           services?.map((service)=>{
             return(

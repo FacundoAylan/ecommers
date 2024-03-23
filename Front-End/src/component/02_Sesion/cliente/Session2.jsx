@@ -27,12 +27,14 @@ const Session2 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app';
     try{
       const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
       const email= user.email;
   
       if (emailRegex.test(email)) {
-        const response = await axios.post('http://127.0.0.1:8000/LoginClient',user)
+        const response = await axios.post(`${urlDeploy}/LoginClient`,user)
         navigate("/home",{ state:{user:response.data}});
       }else {
         setAlert(true)
@@ -45,8 +47,10 @@ const Session2 = () => {
     setAlert(!alert)
   }
   useEffect(()=>{
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app';
     const local= async()=>{
-      const response = await axios.get('http://127.0.0.1:8000/locals')
+      const response = await axios.get(`${urlDeploy}/locals`)
       setLocals(response.data)
     }
     local()

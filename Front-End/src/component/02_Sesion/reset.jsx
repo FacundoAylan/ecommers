@@ -24,8 +24,10 @@ const Reset = () => {
     setUser(email)
   };
   const handleClick = async () =>{
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app/';
     try{
-      await axios.post('http://127.0.0.1:8000/reset',{email:user})
+      await axios.post(`${urlDeploy}/reset`,{email:user})
       navigate('/Session')
     }
     catch{

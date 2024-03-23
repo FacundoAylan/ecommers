@@ -46,12 +46,14 @@ const Createclient = ({uid}) => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app';
     try{
       const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
       const email = user.email;
   
       if (emailRegex.test(email)) {
-        const response = await axios.post('http://127.0.0.1:8000/singupuser',user)
+        const response = await axios.post(`${urlDeploy}/singupuser`,user)
       }else {
         setAlert(true)
       }

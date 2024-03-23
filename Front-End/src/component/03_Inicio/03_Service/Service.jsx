@@ -12,10 +12,12 @@ const Service = ({uid}) => {
   const[services, setServices]=useState();
 
   useEffect(()=>{
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app';
     if(uid){
       const serviceAxios = async()=>{
         try{
-          const response = await axios.post('http://127.0.0.1:8000/Getservice', { uid });
+          const response = await axios.post(`${urlDeploy}/Getservice`, { uid });
           setServices(response.data)
         }catch (error) {
           console.error("Error:", error);

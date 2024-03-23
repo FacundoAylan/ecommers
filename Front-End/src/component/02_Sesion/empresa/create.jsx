@@ -45,12 +45,14 @@ const CreateUser = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const urlLocal = 'http://127.0.0.1:8000';
+    const urlDeploy = 'https://serverlavadero.vercel.app';
     try{
       const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
       const { email, password } = user;
   
       if (emailRegex.test(email) && password.length >= 6) {
-        const response = await axios.post('http://127.0.0.1:8000/singup',user)
+        const response = await axios.post(`${urlDeploy}/singup`,user)
         navigate("/Session");
       }else {
         setAlert(true)

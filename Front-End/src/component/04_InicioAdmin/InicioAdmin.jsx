@@ -34,7 +34,7 @@ const InicioAmin = () => {
   return (
     <>
     {info && (
-      <Flex flexDirection="row">
+      <Flex flexDirection="row" overflow='hidden'>
         <Box width="20%" height="100vh" backgroundColor="#177e84" borderRight='2px solid white'>
           <Box 
             width='100%' 
@@ -118,10 +118,9 @@ const InicioAmin = () => {
             backgroundColor='transparent' 
             borderBottom='2px solid white'
             borderRadius='none'
+            onClick={()=>navigate('/')}
             >
-              <Link href='/'>
-                Cerrar sesion
-              </Link>
+              Cerrar sesion
             </Button>
         </Box>
         <Box width='80%' height='100vh'>
