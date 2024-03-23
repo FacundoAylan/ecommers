@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Home from './component/01_Home/Home';
-import Session1 from './component//02_Sesion/empresa/Session1';
+import Session1 from './component/02_Sesion/empresa/Session1';
+import CreateUser from './component/02_Sesion/empresa/create'
 import Session2 from './component/02_Sesion/cliente/Session2';
 import Reset from './component/02_Sesion/reset';
 import InicioClient from './component/03_Inicio/InicioClient';
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: '/Session',
     element: <Session1/>
+  },
+  {
+    path:'/createclient',
+    element: <CreateUser/>
   },
   {
     path: '/reset',
