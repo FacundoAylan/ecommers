@@ -9,7 +9,7 @@ auth, db = initialize_firebase_app()
 app = FastAPI()
 # Configuración de CORS para permitir solicitudes desde cualquier origen
 origins = [
-    "https://serverlavadero.vercel.app",
+    "https://lavadero-beryl.vercel.app",
     "http://localhost:5173",
     "http://localhost:5173/Session",  # Agrega aquí la URL exacta de tu aplicación React
 ]
