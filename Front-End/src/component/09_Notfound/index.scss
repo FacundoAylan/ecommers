@@ -1,0 +1,32 @@
+
+.container_error {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #16181a;
+  animation: blink 2s infinite alternate;
+}
+@keyframes blink {
+  0% {
+    background-color: #16181a;
+  }
+  100% {
+    background-color: red;
+  }
+}
+.container_messenger {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-rows: repeat(2,30%);
+  gap: 50px;
+  font-family: error;
+}
+.container_messenger h1{
+  text-transform: uppercase;
+  font-size: 200px;
+  letter-spacing: 5px;
+  color: #fff;
+  text-shadow: 0 0 20px 2px #fff;
+}

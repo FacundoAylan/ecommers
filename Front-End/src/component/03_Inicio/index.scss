@@ -1,0 +1,36 @@
+@import "bootstrap/scss/bootstrap";
+
+// Paleta de colores
+// --color-cian: #0dcaf0;
+// --color-negro: #212529;
+// --color-cian-claro: #45d6f7;
+// --color-cian-oscuro: #07a2c3;
+// --color-negro-claro: #495057;
+// --color-negro-oscuro: #16181a;
+// -- blanco: #f3f0ed
+// -- Anaranjado: #ed4545
+// -- Azul: #0c2a43
+
+.container_home {
+width: 100%;
+height: 100%;
+display: grid;
+place-items: center;
+position: relative;
+background-color: #495057;
+}
+.search {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  background-color: #0dcaf0;
+}
+
+.containers {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #277cd1;
+}

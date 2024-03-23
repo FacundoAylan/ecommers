@@ -1,0 +1,84 @@
+@import "bootstrap/scss/bootstrap";
+
+// Paleta de colores
+// --color-cian: #0dcaf0;
+// --color-negro: #212529;
+// --color-cian-claro: #45d6f7;
+// --color-cian-oscuro: #07a2c3;
+// --color-negro-claro: #495057;
+// --color-negro-oscuro: #16181a;
+// -- blanco: #f3f0ed
+// -- Anaranjado: #ed4545
+// -- Azul: #0c2a43
+
+.container_primary{
+  width: 100%;
+  height: 100%;
+  background-color: #0c2a43;
+  border: 2px solid #fff; 
+  box-shadow: inset 0 0 20px 2px #45d6f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.title_1{
+  height: auto;
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 5px;
+  background: linear-gradient(to right, #f3f0ed 58%, #ed4545 42%);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline; 
+  font-family: fuente1;
+}
+
+.container_button_primary{
+  width: 30%;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.button_primary {
+  width: 100%;
+  background-color: #0dcaf0;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 8px;
+  border: 2px solid transparent; 
+  box-shadow: 0 0 10px 2px transparent;
+  margin-top: 6%;
+}
+.link_primary {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  padding: 2%;
+}
+.button_primary:hover{
+  border: 2px solid #fff; 
+  box-shadow: 0 0 10px 2px #45d6f7;
+}
