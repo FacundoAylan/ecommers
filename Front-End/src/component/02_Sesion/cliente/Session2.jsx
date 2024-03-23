@@ -97,14 +97,17 @@ const Session2 = () => {
           >
             <Text>Nombre del local</Text>
             <Select 
-              placeholder="Ingre su local" 
+              placeholder="Ingrese su local" 
               name='local' 
               value={user.local} 
               onChange={handleChange}
+              variant="outline"
+              colorScheme='#0c2a43'
+              bg='#0c2a43'
             >
               {
                 locals?.map((local)=>(
-                  <option key={local.value} value={local.value}>
+                  <option key={local.value} value={local.value} style={{ backgroundColor: "#0c2a43", color: "white" }}>
                     {local}
                   </option >
                 ))
