@@ -19,28 +19,22 @@ import axios from 'axios';
 const CreateUser = () => {
 
   const [user, setUser] = useState({
-    'email': '',
-    'password': '',
-    'name':'',
-    'phone':''
+    "email": "",
+    "password": "",
+    "nameLocal": "",
+    "name": "",
+    "phone": ""
   });
-
+  console.log(user)
   const [alert, setAlert] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if(name == 'phone'){
-      setUser({
-        ...user,
-        [name]: parseInt(value),
-      })
-    }else{
-      setUser({
-        ...user,
-        [name]: value,
-      })
-    }
+    setUser({
+      ...user,
+      [name]: value,
+    })
 
   }
   const handleSubmit = async (e) => {
@@ -102,10 +96,18 @@ const CreateUser = () => {
             textTransform='uppercase'
             marginTop={{ base: '10px', lg: '20px' }}
           >
-            <Text>Nombre de la empresa</Text>
+            <Text>Nombre del local</Text>
+            <Input name='nameLocal' value={user.nameLocal} onChange={handleChange} />
+          </Box>
+          <Box
+            fontWeight='bold'
+            color='white'
+            textTransform='uppercase'
+            marginTop={{ base: '10px', lg: '20px' }}
+          >
+            <Text>Nombre</Text>
             <Input name='name' value={user.name} onChange={handleChange} />
           </Box>
-
           <Box
             fontWeight='bold'
             color='white'
@@ -124,6 +126,7 @@ const CreateUser = () => {
             <Text>Correo</Text>
             <Input name='email' value={user.email} onChange={handleChange} />
           </Box>
+
           <Box
             fontWeight='bold'
             color='white'
@@ -131,7 +134,7 @@ const CreateUser = () => {
             marginTop={{ base: '10px', lg: '20px' }}
           >
             <Text>Contraseña</Text>
-            <Input type='password' name='password' value={user.password} onChange={handleChange} />
+            <Input type='password'name='password' value={user.password} onChange={handleChange} />
           </Box>
           <Center
             width='100%'
