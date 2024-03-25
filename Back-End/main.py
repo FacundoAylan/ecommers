@@ -4,9 +4,6 @@ import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 from models import Singup,UserSignup,Login,LoginUser,ResetUser, User, Service
 
-import pyrebase
-from firebase import firebase
-
 
 auth, db = initialize_firebase_app()
 
