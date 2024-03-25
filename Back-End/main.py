@@ -4,7 +4,6 @@ import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 from models import Singup,UserSignup,Login,LoginUser,ResetUser, User, Service
 
-
 auth, db = initialize_firebase_app()
 
 app = FastAPI()
@@ -22,6 +21,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Crear usuarios para las empresas
 @app.post('/singup')
@@ -91,9 +91,9 @@ def login(user: Login):
       "nameLocal":users_dict["nameLocal"],
       "phone":users_dict["phone"]
     }
-    users = []
-    if "Users" in users_dict:
-      for uid, data in users_dict["Users"].items():
+    users=[]
+    if "Users" in users_dict: 
+      for uid, data in users_dict["Users"].items(): 
         users.append(data)
     
     result = {**info, "users": users}
