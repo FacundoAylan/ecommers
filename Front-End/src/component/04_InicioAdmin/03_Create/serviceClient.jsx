@@ -133,7 +133,7 @@ const Createservice = ({uid}) => {
               _hover='none'
               onClick={handleSubmit}
             >
-              Crear usuario
+              Crear servicio
             </Button>
           </Center>
           </Box>
